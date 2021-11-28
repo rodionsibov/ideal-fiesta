@@ -1,5 +1,10 @@
 let count = 0
-document.querySelector('#increment-btn').addEventListener('click', () => {
+const countEl =  document.querySelector('#count-el')
+const btnEl = document.querySelector('#increment-btn')
+
+btnEl.addEventListener('click', increment)
+
+function increment() {
     count++
-    document.querySelector('#count-el').innerHTML = count
-})
+   countEl.innerHTML = count
+}
