@@ -14,4 +14,6 @@ function increment() {
 
 function save() {
     saveEl.innerText += ` ${count} - `
+    count = 0
+    countEl.innerText = 0
 }
