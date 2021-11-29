@@ -1,5 +1,6 @@
 let count = 0
 const countEl = document.querySelector('#count-el')
+const saveEl = document.querySelector('#save-el')
 const btnIncrement = document.querySelector('#increment-btn')
 const btnSave = document.querySelector('#save-btn')
 
@@ -8,9 +9,9 @@ btnSave.addEventListener('click', save)
 
 function increment() {
     count++
-    countEl.innerHTML = count
+    countEl.innerText = count
 }
 
 function save() {
-    console.log(count);
+    saveEl.innerText += ` ${count} - `
 }
