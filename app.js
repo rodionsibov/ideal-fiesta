@@ -1,4 +1,5 @@
 let count = 0
+const entries = []
 const countEl = document.querySelector('#count-el')
 const saveEl = document.querySelector('#save-el')
 const btnIncrement = document.querySelector('#increment-btn')
@@ -13,7 +14,8 @@ function increment() {
 }
 
 function save() {
-    saveEl.innerText += ` ${count} - `
+    if (count !== 0) entries.push(count)
+    saveEl.innerText = `Previous entries: ${entries.join(' - ')}`
     count = 0
     countEl.innerText = 0
 }
