@@ -11,12 +11,14 @@ const cardsEl = document.querySelector('#cards-el')
 const playerEl = document.querySelector('#player-el')
 let player = {
     name: 'Per',
-    chips: 145
+    chips: 0
 }
 
 playerEl.innerText = `${player.name}: $${player.chips}`
 
 function startGame() {
+    playerEl.innerText = `${player.name}: $${player.chips}`
+    hasBlackJack = false
     isAlive = true
     let firstCard = getRandomCard()
     let secondCard = getRandomCard()
@@ -33,6 +35,7 @@ function renderGame() {
         message = 'Do you want to draw a new card?'
     } else if (sum === 21) {
         message = 'You have got a Blackjack!'
+        player.chips += 50
         hasBlackJack = true
     } else {
         message = 'You are out of the game!'
