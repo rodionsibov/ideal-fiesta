@@ -12,7 +12,7 @@ function saveLead() {
 function renderLeads() {
     ulEl.innerHTML = myLeads.map(item => {
         return `
-    <li><a href="https://${item}.com" target="_blank">${item}</a></li>
+    <li><a href="${item}" target="_blank">${item}</a></li>
     `
     }).join('')
 }
