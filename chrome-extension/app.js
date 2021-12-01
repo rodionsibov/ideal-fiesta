@@ -6,7 +6,6 @@ const myLeads = []
 function saveLead() {
     if (inputEl.value) myLeads.push(inputEl.value)
     inputEl.value = ''
-
     renderLeads()
 }
 
