@@ -10,6 +10,7 @@ input {
     margin-bottom: 4px;
     box-sizing: border-box;
     border: 1px solid darkgreen;
+    font-weight: bold;
 }
 
 button {
