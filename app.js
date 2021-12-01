@@ -9,6 +9,12 @@ const messageEl = document.querySelector('#message-el')
 const sumEl = document.querySelector('#sum-el')
 const cardsEl = document.querySelector('#cards-el')
 const playerEl = document.querySelector('#player-el')
+let player = {
+    name: 'Per',
+    chips: 145
+}
+
+playerEl.innerText = `${player.name}: $${player.chips}`
 
 function startGame() {
     isAlive = true
@@ -20,10 +26,8 @@ function startGame() {
 }
 
 function renderGame() {
-    for (let i = 0; i < cards.length; i++) {
-        cardsEl.innerText += ` ${cards[i]}`
-        sumEl.innerText = `Sum: ${cards.reduce((acc, counter) => acc + counter, 0)}`
-    }
+    cardsEl.innerText = `Cards: ${cards.join(' ')}`
+    sumEl.innerText = `Sum: ${cards.reduce((acc, counter) => acc + counter, 0)}`
 
     if (sum < 21) {
         message = 'Do you want to draw a new card?'
