@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 10px;
@@ -9,7 +13,6 @@ input {
     width: 100%;
     padding: 10px;
     margin-bottom: 4px;
-    box-sizing: border-box;
     border: 1px solid darkgreen;
     font-weight: bold;
 }
