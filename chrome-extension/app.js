@@ -1,9 +1,14 @@
 const inputBtn = document.querySelector('#input-btn')
 const deleteBtn = document.querySelector('#delete-btn')
+const tabBtn = document.querySelector('#tab-btn')
 const inputEl = document.querySelector('#input-el')
 const ulEl = document.querySelector('#ul-el')
 let myLeads = []
 let oldLeads = []
+
+const tabs = [
+    { url: 'https://picsum.photos' }
+]
 
 inputBtn.disabled = true
 inputEl.addEventListener('keyup', (e) => {
@@ -31,6 +36,12 @@ function saveLead() {
     }
 }
 
+function saveTab() {
+    myLeads.push(tabs[0].url)
+    localStorage.setItem('myLeads', JSON.stringify(myLeads))
+    renderLeads(myLeads)
+}
+
 function renderLeads(leads) {
     ulEl.innerHTML = leads.map(item => {
         return `
@@ -41,11 +52,12 @@ function renderLeads(leads) {
 
 function deleteLeads() {
     // if (confirm('Are you sure? Do you want to delete all leads?')) {
-        localStorage.clear()
-        myLeads = []
-        renderLeads(myLeads)
+    localStorage.clear()
+    myLeads = []
+    renderLeads(myLeads)
     // }    
 }
 
 inputBtn.addEventListener('click', saveLead)
 deleteBtn.addEventListener('click', deleteLeads)
+tabBtn.addEventListener('click', saveTab)
