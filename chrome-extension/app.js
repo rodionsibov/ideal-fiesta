@@ -7,9 +7,20 @@ let oldLeads = []
 
 inputBtn.disabled = true
 inputEl.addEventListener('keyup', (e) => {
-    e.target.value 
-    ? inputBtn.disabled = false 
-    : inputBtn.disabled = true
+    e.target.value.trim()
+        ? inputBtn.disabled = false
+        : inputBtn.disabled = true
+
+    if (e.code === 'Enter') {
+        saveLead()
+        inputBtn.disabled = true
+    }
+})
+
+window.addEventListener('keyup', (e) => {
+    if (e.shiftKey && e.key === 'D') {
+        deleteLeads()
+    }
 })
 
 if (localStorage.getItem('myLeads')) {
