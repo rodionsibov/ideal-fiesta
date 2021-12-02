@@ -5,7 +5,12 @@ const ulEl = document.querySelector('#ul-el')
 let myLeads = []
 let oldLeads = []
 
-inputBtn.setAttribute('disabled', true)
+inputBtn.disabled = true
+inputEl.addEventListener('keyup', (e) => {
+    e.target.value 
+    ? inputBtn.disabled = false 
+    : inputBtn.disabled = true
+})
 
 if (localStorage.getItem('myLeads')) {
     myLeads = JSON.parse(localStorage.getItem('myLeads'))
@@ -13,10 +18,12 @@ if (localStorage.getItem('myLeads')) {
 }
 
 function saveLead() {
-    if (inputEl.value) myLeads.push(inputEl.value)
-    localStorage.setItem('myLeads', JSON.stringify(myLeads))
-    inputEl.value = ''
-    renderLeads(myLeads)
+    if (inputEl.value) {
+        myLeads.push(inputEl.value)
+        localStorage.setItem('myLeads', JSON.stringify(myLeads))
+        inputEl.value = ''
+        renderLeads(myLeads)
+    }
 }
 
 function renderLeads(leads) {
