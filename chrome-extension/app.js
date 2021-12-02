@@ -17,12 +17,6 @@ inputEl.addEventListener('keyup', (e) => {
     }
 })
 
-window.addEventListener('keyup', (e) => {
-    if (e.shiftKey && e.key === 'D') {
-        deleteLeads()
-    }
-})
-
 if (localStorage.getItem('myLeads')) {
     myLeads = JSON.parse(localStorage.getItem('myLeads'))
     renderLeads(myLeads)
