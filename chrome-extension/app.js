@@ -3,21 +3,24 @@ const deleteBtn = document.querySelector('#delete-btn')
 const inputEl = document.querySelector('#input-el')
 const ulEl = document.querySelector('#ul-el')
 let myLeads = []
+let oldLeads = []
+
+inputBtn.setAttribute('disabled', true)
 
 if (localStorage.getItem('myLeads')) {
     myLeads = JSON.parse(localStorage.getItem('myLeads'))
-    renderLeads()
+    renderLeads(myLeads)
 }
 
 function saveLead() {
     if (inputEl.value) myLeads.push(inputEl.value)
     localStorage.setItem('myLeads', JSON.stringify(myLeads))
     inputEl.value = ''
-    renderLeads()
+    renderLeads(myLeads)
 }
 
-function renderLeads() {
-    ulEl.innerHTML = myLeads.map(item => {
+function renderLeads(leads) {
+    ulEl.innerHTML = leads.map(item => {
         return `
     <li><a href="${item}" target="_blank">${item}</a></li>
     `
@@ -28,7 +31,7 @@ function deleteLeads() {
     if (confirm('Are you sure? Do you want to delete all leads?')) {
         localStorage.clear()
         myLeads = []
-        renderLeads()
+        renderLeads(myLeads)
     }
 }
 

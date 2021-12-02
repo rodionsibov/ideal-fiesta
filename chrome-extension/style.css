@@ -30,13 +30,18 @@ button {
     border-radius: 2px;
 }
 
+button:disabled {
+    filter: grayscale(1);
+    opacity: 0.2;
+}
+
 #delete-btn {
     background: white;
     border: 1px solid darkgreen;
     color: darkgreen;
 }
 
-button:hover {
+button:hover:enabled {
     opacity: 0.8;
 }
 
