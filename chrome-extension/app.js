@@ -28,7 +28,7 @@ function deleteLeads() {
     if (confirm('Are you sure? Do you want to delete all leads?')) {
         localStorage.clear()
         myLeads = []
-        ulEl.innerHTML = ''
+        renderLeads()
     }
 }
 
