@@ -27,6 +27,12 @@ button {
     cursor: pointer;
 }
 
+#delete-btn {
+    background: none;
+    border: 1px solid darkgreen;
+    color: darkgreen;
+}
+
 button:hover {
     opacity: 0.9;
 }

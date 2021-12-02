@@ -1,4 +1,5 @@
 const inputBtn = document.querySelector('#input-btn')
+const deleteBtn = document.querySelector('#delete-btn')
 const inputEl = document.querySelector('#input-el')
 const ulEl = document.querySelector('#ul-el')
 let myLeads = []
@@ -23,4 +24,10 @@ function renderLeads() {
     }).join('')
 }
 
+function deleteLeads() {
+    localStorage.cler()
+    ulEl.innerHTML = ''
+}
+
 inputBtn.addEventListener('click', saveLead)
+deleteBtn.addEventListener('click', deleteLeads)
