@@ -25,9 +25,11 @@ function renderLeads() {
 }
 
 function deleteLeads() {
-    localStorage.clear()
-    myLeads = []
-    ulEl.innerHTML = ''
+    if (confirm('Are you sure? Do you want to delete all leads?')) {
+        localStorage.clear()
+        myLeads = []
+        ulEl.innerHTML = ''
+    }
 }
 
 inputBtn.addEventListener('click', saveLead)
