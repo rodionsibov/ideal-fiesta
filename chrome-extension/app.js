@@ -25,7 +25,7 @@ function renderLeads() {
 }
 
 function deleteLeads() {
-    localStorage.cler()
+    localStorage.clear()
     ulEl.innerHTML = ''
 }
 
