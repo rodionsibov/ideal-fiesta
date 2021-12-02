@@ -19,6 +19,11 @@ input {
     border-radius: 2px;
 }
 
+.buttons {
+    display: flex;
+    gap: 5px;
+}
+
 button {
     background-color: darkgreen;
     color: white;
@@ -39,6 +44,7 @@ button:disabled {
     background: white;
     border: 1px solid darkgreen;
     color: darkgreen;
+    margin-left: auto;
 }
 
 button:hover:enabled {
