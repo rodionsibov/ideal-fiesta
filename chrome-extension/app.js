@@ -26,6 +26,7 @@ function renderLeads() {
 
 function deleteLeads() {
     localStorage.clear()
+    myLeads = []
     ulEl.innerHTML = ''
 }
 
