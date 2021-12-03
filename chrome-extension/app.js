@@ -25,7 +25,7 @@ if (localStorage.getItem('myLeads')) {
 
 function saveLead() {
     if (inputEl.value) {
-        myLeads.push(inputEl.value)
+        myLeads.unshift(inputEl.value)
         localStorage.setItem('myLeads', JSON.stringify(myLeads))
         inputEl.value = ''
         renderLeads(myLeads)
@@ -34,7 +34,7 @@ function saveLead() {
 
 function saveTab() {
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-        myLeads.push(tabs[0].url)
+        myLeads.unshift(tabs[0].url)
         localStorage.setItem('myLeads', JSON.stringify(myLeads))
         renderLeads(myLeads)
     })
