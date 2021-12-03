@@ -42,8 +42,8 @@ button:disabled {
 
 #delete-btn {
     background: white;
-    border: 1px solid darkgreen;
-    color: darkgreen;
+    border: 1px solid darkred;
+    color: darkred;
     margin-left: auto;
 }
 
@@ -61,5 +61,5 @@ li {
 }
 
 a {
-    color: darkgreen;
+    color: black;
 }
