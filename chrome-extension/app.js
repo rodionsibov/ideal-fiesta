@@ -6,10 +6,6 @@ const ulEl = document.querySelector('#ul-el')
 let myLeads = []
 let oldLeads = []
 
-const tabs = [
-    { url: 'https://picsum.photos' }
-]
-
 inputBtn.disabled = true
 inputEl.addEventListener('keyup', (e) => {
     e.target.value.trim()
@@ -37,9 +33,11 @@ function saveLead() {
 }
 
 function saveTab() {
-    myLeads.push(tabs[0].url)
-    localStorage.setItem('myLeads', JSON.stringify(myLeads))
-    renderLeads(myLeads)
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        myLeads.push(tabs[0].url)
+        localStorage.setItem('myLeads', JSON.stringify(myLeads))
+        renderLeads(myLeads)
+    })
 }
 
 function renderLeads(leads) {
